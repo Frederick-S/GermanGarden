@@ -1,0 +1,13 @@
+---
+layout: default
+title: German Word of the Day
+---
+<div>
+    {% for post in site.categories["german word of the day"] %}
+    <div>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">更多</a></p>
+    </div>
+    <hr />
+    {% endfor %}
+</div>

@@ -1,0 +1,13 @@
+---
+layout: default
+title: Apps
+---
+<div>
+    {% for post in site.categories.apps %}
+    <div>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">浏览</a></p>
+    </div>
+    <hr />
+    {% endfor %}
+</div>
