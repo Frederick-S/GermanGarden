@@ -14,7 +14,9 @@ title: 走遍德国A1复习
         <div id="noun" class="panel-collapse collapse">
             <div class="panel-body">
                 <ul class="lessonList">
-                    <li><a href="{{ site.baseurl }}/article/grammar/passwort deutsch a1 review/2013/12/30/singular-and-plural.html">单数和复数</a></li>
+                    {% for post in site.tags["Passwort Deutsch A1 Review Noun"] reversed %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -28,8 +30,9 @@ title: 走遍德国A1复习
         <div id="adjective" class="panel-collapse collapse">
             <div class="panel-body">
                 <ul class="lessonList">
-                    <li><a href="{{ site.baseurl }}/article/grammar/passwort deutsch a1 review/2013/12/31/comparative.html">形容词的比较级</a></li>
-                    <li><a href="{{ site.baseurl }}/article/grammar/passwort deutsch a1 review/2013/12/31/superlative.html">形容词的最高级</a></li>
+                    {% for post in site.tags["Passwort Deutsch A1 Review Adjective"] reversed %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -43,8 +46,25 @@ title: 走遍德国A1复习
         <div id="article" class="panel-collapse collapse">
             <div class="panel-body">
                 <ul class="lessonList">
-                    <li><a href="{{ site.baseurl }}/article/grammar/passwort deutsch a1 review/2014/01/01/definite-article.html">定冠词</a></li>
-                    <li><a href="{{ site.baseurl }}/article/grammar/passwort deutsch a1 review/2014/01/01/indefinite-article.html">不定冠词</a></li>
+                    {% for post in site.tags["Passwort Deutsch A1 Review Article"] reversed %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1-review" href="#modalVerb">情态动词</a>
+            </h4>
+        </div>
+        <div id="modalVerb" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul class="lessonList">
+                    {% for post in site.tags["Passwort Deutsch A1 Review Modal Verb"] reversed %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
