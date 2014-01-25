@@ -1,4 +1,5 @@
-Project pages for [German Garden](http://frederick-s.github.io/GermanGarden/).
+## Intro
+Project site for [German Garden](http://frederick-s.github.io/GermanGarden/).
 
 ## Additional Resources
 * [Duden online](http://www.duden.de/): provides comprehensive information on spelling, grammar and meaning of a word.
