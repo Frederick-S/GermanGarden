@@ -213,4 +213,20 @@ title: 走遍德国A1复习
             </div>
         </div>
     </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1-review" href="#dativ">三格</a>
+            </h4>
+        </div>
+        <div id="dativ" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul class="lessonList">
+                    {% for post in site.tags["Passwort Deutsch A1 Review Dativ"] reversed %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
