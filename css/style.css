@@ -36,7 +36,7 @@ body {
 .note:after {
 	content: "Note";
 	position: absolute;
-	top: -1px;	
+	top: -1px;
 	left: -1px;
 	padding: 3px 7px;
 	font-size: 12px;
@@ -59,15 +59,15 @@ body {
 }
 
 /* Main style */
-.lessonList {
+.lesson-list {
 	list-style-type: none;
 }
 
-.lessonList li {
+.lesson-list li {
 	padding: 5px 0;
 }
 
-.itemList li {
+.item-list li {
 	padding: 5px 0;
 	line-height: 25px;
 }
@@ -80,7 +80,7 @@ p {
 	color: #d14;
 }
 
-#scrollUp {
+#scroll-up {
 	background-image: url(http://daisyun.oss.aliyuncs.com/images/GermanGarden/top.png);
 	position: fixed;
 	bottom: 10px;
@@ -112,7 +112,7 @@ p {
 
 .table>tbody>tr>td.vertical-middle {
 	vertical-align: middle;
-} 
+}
 
 .text-center {
 	text-align: center;
