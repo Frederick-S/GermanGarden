@@ -110,7 +110,7 @@ p {
 	text-decoration: line-through;
 }
 
-.table>tbody>tr>td.vertical-middle {
+.table > tbody > tr > td.vertical-middle {
 	vertical-align: middle;
 }
 
