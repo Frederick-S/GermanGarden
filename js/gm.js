@@ -28,9 +28,9 @@
 
 (function (window, $) {
     var GM = {};
-    
+
     var config = GM.config = {
-        scrollUpId: "scrollUp",
+        scrollUpId: "scroll-up",
         forvo: {
             searchTextId: "search-content",
             searchButtonId: "search",
