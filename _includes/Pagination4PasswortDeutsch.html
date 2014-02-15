@@ -1,0 +1,40 @@
+{% assign prev = "" %}
+{% assign tag = page.tags[1] %}
+{% assign pageIsFound = false %}
+
+<ul class="pager">
+    {% for post in site.tags[tag] reversed %}
+        {% if forloop.index == 1 and page.url == post.url %}
+            <li class="previous disabled">
+                <a>上一页</a>
+            </li>
+            {% break %}
+        {% elsif page.url == post.url %}
+            <li class="previous">
+                <a href="{{ site.baseurl }}{{ prev }}">上一页</a>
+            </li>
+            {% break %}
+        {% endif %}
+        {% assign prev = post.url %}
+    {% endfor %}
+    <li>
+        {% include PathOfPasswortDeutsch.html %}
+    </li>
+    {% for post in site.tags[tag] reversed %}
+        {% if pageIsFound == false and forloop.index == forloop.length %}
+            <li class="next disabled">
+                <a>下一页</a>
+            </li>
+            {% break %}
+        {% endif %}
+        {% if pageIsFound == true %}
+            <li class="next">
+                <a href="{{ site.baseurl }}{{ post.url }}">下一页</a>
+            </li>
+            {% break %}
+        {% endif %}
+        {% if page.url == post.url %}
+            {% assign pageIsFound = true %}
+        {% endif %}
+    {% endfor %}
+</ul>

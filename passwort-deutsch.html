@@ -6,196 +6,33 @@ title: Passwort Deutsch
 <p>Passwort Deutsch (《走遍德国》) 是专为德语非母语（Deutsch als Fremdsprache）的学习者编写的一套德语强化教材。</p>
 <p>注：以下内容均整理自<a href="http://class.hujiang.com/">沪江网校德语课程</a></p>
 <hr />
-<h2>A1</h2>
-<div class="panel-group" id="accordion-a1">
+
+{% assign passwortDeutsch = "Passwort Deutsch" %}
+{% assign singleSpace = " " %}
+{% assign levels = "A1" | split: "|" %}
+{% assign lessons = "Lektion 1|Lektion 2|Lektion 3|Lektion 4|Lektion 5|Lektion 6|Lektion 7|Lektion 8|Lektion 9|Lektion 10" | split: "|" %}
+
+{% for level in levels %}
+<h2>{{ level }}</h2>
+<div class="panel-group" id="{{ level }}">
+    {% for lesson in lessons %}
     <div class="panel panel-default">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion1">Lektion 1</a>
+                <a data-toggle="collapse" data-toggle="collapse" data-parent="#{{ level }}" href="#{{ level | append: "-" | append: lesson | replace: " ", "-" }}">{{ lesson }}</a>
             </h4>
         </div>
-        <div id="a1-lektion1" class="panel-collapse collapse">
+        <div id="{{ level | append: "-" | append: lesson | replace: " ", "-" }}" class="panel-collapse collapse">
             <div class="panel-body">
                 <ul class="lesson-list">
-                    <li><a title="问候，告别，介绍自己的姓名" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-1.html">Lektion 1-1: Guten Tag</a></li>
-                    <li><a title="介绍自己的籍贯，国籍，居住地，并针对其提问和回答" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-2.html">Lektion 1-2: Woher kommen Sie?</a></li>
-                    <li><a title="六大洲和国家名称介绍" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-3.html">Lektion 1-3: Die Welt</a></li>
-                    <li><a title="wo, woher, wohin 引导的特殊疑问句及回答" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-4.html">Lektion 1-4: wo &amp; woher &amp; wohin</a></li>
-                    <li><a title="代词及动词 sein 的变位" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-5.html">Lektion 1-5: Mitten in Europa</a></li>
-                    <li><a title="动词变位 (规则变化)" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-6.html">Lektion 1-6: Ein Zug in Deutschland</a></li>
-                    <li><a title="动词变位 (不规则变化)；wer 引导的特殊疑问句；数字1～100" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-7.html">Lektion 1-7: wer &amp; Zahlen</a></li>
-                    <li><a title="询问别人的信息；祈使句的用法" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 1-8.html">Lektion 1-8: Auf Wiedersehen</a></li>
+                    {% assign name = passwortDeutsch | append: singleSpace | append: level | append: singleSpace | append: lesson] %}
+                    {% for post in site.tags[name] reversed %}
+                        <li><a title="{{ post.excerpt }}" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion2">Lektion 2</a>
-            </h4>
-        </div>
-        <div id="a1-lektion2" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-1.html">Lektion 2-1: Bilder aus Deutschland</a></li>
-                    <li><a title="冠词和代词；单数和复数" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-2.html">Lektion 2-2: Artikel Sg./Pl.</a></li>
-                    <li><a title="形容词和复合词" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-3.html">Lektion 2-3: Eine Stadt, ein Dorf</a></li>
-                    <li><a title="kein 和 nicht" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-4.html">Lektion 2-4: Die Stadt Frankfurt</a></li>
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-5.html">Lektion 2-5: In Köln</a></li>
-                    <li><a title="数字 (一百到一百万)" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 2-6.html">Lektion 2-6: Wie alt bist du?</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion3">Lektion 3</a>
-            </h4>
-        </div>
-        <div id="a1-lektion3" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-1.html">Lektion 3-1: Meine Familie und ich</a></li>
-                    <li><a title="询问：姓名，年龄，职业，婚姻状况，子女；haben 和 sein；物主代词: mein, dein, Ihr. 我的，你的，您的" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-2.html">Lektion 3-2: haben & sein</a></li>
-                    <li><a title="询问兴趣爱好；框架结构 (1)" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-3.html">Lektion 3-3: Die Hobbys von Frau Mainka</a></li>
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-4.html">Lektion 3-4: Montag, 9 Uhr, Studio 21</a></li>
-                    <li><a title="官方报时；情态动词 (möchte)；可分动词" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-5.html">Lektion 3-5: Wie viel Uhr ist es?</a></li>
-                    <li><a title="框架结构 (2)；物主代词：她的，他的，它的；信件格式" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-6.html">Lektion 3-6: ihr&sein&Briefformat</a></li>
-                    <li><a title="重点词汇；表示称呼的名词" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-7.html">Lektion 3-7: Ein Brief aus Tübingen</a></li>
-                    <li><a title="物主代词：我们的，你们的，他们的" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 3-8.html">Lektion 3-8: Im Deutschkurs</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion4">Lektion 4</a>
-            </h4>
-        </div>
-        <div id="a1-lektion4" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="四格宾语" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-1.html">Lektion 4-1: Der Münsterplatz in Freiburg</a></li>
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-2.html">Lektion 4-2: Foto-Objekte</a></li>
-                    <li><a title="was & wen" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-3.html">Lektion 4-3: was&amp;wen</a></li>
-                    <li><a title="否定词 kein 的第四格" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-4.html">Lektion 4-4: Das Münster-Café</a></li>
-                    <li><a title="量词；含元音e的不规则动词变位 (现在时)" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-5.html">Lektion 4-5: Nimm ein Stück Kuchen！</a></li>
-                    <li><a title="情态动词 müssen, können；不定代词 man" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 4-6.html">Lektion 4-6: Am Samstag arbeiten?</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion5">Lektion 5</a>
-            </h4>
-        </div>
-        <div id="a1-lektion5" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-1.html">Lektion 5-1: Leute in Hamburg</a></li>
-                    <li><a title="介词 auf 和 in" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-2.html">Lektion 5-2: Ein Stadtspaziergang</a></li>
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-3.html">Lektion 5-3: Tageszeit & Mahlzeit</a></li>
-                    <li><a title="物主代词的第四格" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-4.html">Lektion 5-4: Der Tag von Familie Raptis</a></li>
-                    <li><a title="sein, haben 和 es gibt 的过去时" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-5.html">Lektion 5-5: Früher und heute</a></li>
-                    <li><a title="含有否定词的疑问句" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-6.html">Lektion 5-6: haben & sein & es gibt</a></li>
-                    <li><a title="人称代词的四格形式，加四格宾语的介词 für 和 ohne" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 5-7.html">Lektion 5-7: Eine Spezialität aus Hamburg</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion6">Lektion 6</a>
-            </h4>
-        </div>
-        <div id="a1-lektion6" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 6-1.html">Lektion 6-1: Ortstermin Leipzig</a></li>
-                    <li><a title="带助动词 haben 的现在完成时" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 6-2.html">Lektion 6-2: Das Klassentreffen</a></li>
-                    <li><a title="带助动词 sein 的现在完成时" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 6-3.html">Lektion 6-3: Perfekt mit sein</a></li>
-                    <li><a title="不规则动词的现在完成时的变位规则" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 6-4.html">Lektion 6-4: Treffpunkt Augustusplatz</a></li>
-                    <li><a title="年份的读法，非官方报时" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 6-5.html">Lektion 6-5: Jahrgang „19 hundert 72“</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion7">Lektion 7</a>
-            </h4>
-        </div>
-        <div id="a1-lektion7" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 7-1.html">Lektion 7-1: Ein Hotel in Salzburg</a></li>
-                    <li><a title="可分动词的过去分词" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 7-2.html">Lektion 7-2: Arbeit und Freizeit</a></li>
-                    <li><a title="天气的说法，不可分动词的过去分词" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 7-3.html">Lektion 7-3: Unterwegs nach Salzburg</a></li>
-                    <li><a title="以-ieren结尾动词的过去分词；过去分词总结" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 7-4.html">Lektion 7-4: An der Rezeption</a></li>
-                    <li><a title="三格" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 7-5.html">Lektion 7-5: Im Speisesaal</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion8">Lektion 8</a>
-            </h4>
-        </div>
-        <div id="a1-lektion8" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 8-1.html">Lektion 8-1: Projekt: Nürnberg - unsere Stadt</a></li>
-                    <li><a title="介词auf, an, in + 三格/四格" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 8-2.html">Lektion 8-2: Straßen und Plätze in Nürnberg</a></li>
-                    <li><a title="问路" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 8-3.html">Lektion 8-3: Wegbeschreibung und Farben</a></li>
-                    <li><a title="疑问词welch" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 8-4.html">Lektion 8-4: Im Atelier für Mode und Design</a></li>
-                    <li><a title="情态动词wollen和dürfen" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 8-5.html">Lektion 8-5: Im Lebkuchenhaus</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion9">Lektion 9</a>
-            </h4>
-        </div>
-        <div id="a1-lektion9" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 9-1.html">Lektion 9-1: Eine Stadt im Dreiländereck: Basel</a></li>
-                    <li><a title="比较级" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 9-2.html">Lektion 9-2: Stadt und Land</a></li>
-                    <li><a title="最高级" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 9-3.html">Lektion 9-3: Pendeln - aber wie?</a></li>
-                    <li><a title="支配三格的介词aus, bei, von, zu" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 9-4.html">Lektion 9-4: Arbeiten in Basel</a></li>
-                    <li><a title="人称代词的第三格" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 9-5.html">Lektion 9-5: Basel international</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion-a1" href="#a1-lektion10">Lektion 10</a>
-            </h4>
-        </div>
-        <div id="a1-lektion10" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 10-1.html">Lektion 10-1: Glückkaufstraße 14, Bochum</a></li>
-                    <li><a title="重点词汇" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 10-2.html">Lektion 10-2: Die Zeche Helene</a></li>
-                    <li><a title="情态动词的过去时" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 10-3.html">Lektion 10-3: Zwei Biografien</a></li>
-                    <li><a title="量词，购物重点句型" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 10-4.html">Lektion 10-4: Lebensmittel Alak</a></li>
-                    <li><a title="dass 和 weil 引导的从句" href="{{ site.baseurl }}/Passwort Deutsch/A1/Lektion 10-5.html">Lektion 10-5: Meinungen über das Ruhrgebiet</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
+{% endfor %}
