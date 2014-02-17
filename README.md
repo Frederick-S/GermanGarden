@@ -1,5 +1,5 @@
 ## Introduction
-A site of learning German language.
+My German language notes.
 
 ## Additional Resources
 * [Duden online](http://www.duden.de/): provides comprehensive information on spelling, grammar and meaning of a word.
