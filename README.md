@@ -1,5 +1,5 @@
-## Intro
-Project site for [German Garden](http://frederick-s.github.io/GermanGarden/).
+## Introduction
+A site of learning German language.
 
 ## Additional Resources
 * [Duden online](http://www.duden.de/): provides comprehensive information on spelling, grammar and meaning of a word.
