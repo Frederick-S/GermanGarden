@@ -18,7 +18,7 @@
         {% assign prev = post.url %}
     {% endfor %}
     <li>
-        {% include PathOfPasswortDeutsch.html %}
+        <a href="{{ site.baseurl }}/passwort-deutsch.html">走遍德国</a>
     </li>
     {% for post in site.tags[tag] reversed %}
         {% if pageIsFound == false and forloop.index == forloop.length %}
