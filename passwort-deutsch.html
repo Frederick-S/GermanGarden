@@ -9,30 +9,43 @@ title: Passwort Deutsch
 
 {% assign passwortDeutsch = "Passwort Deutsch" %}
 {% assign singleSpace = " " %}
-{% assign levels = "A1" | split: "|" %}
-{% assign lessons = "Lektion 1|Lektion 2|Lektion 3|Lektion 4|Lektion 5|Lektion 6|Lektion 7|Lektion 8|Lektion 9|Lektion 10" | split: "|" %}
+{% assign lektion = "Lektion" %}
+{% assign levels = "A1|A2" | split: "|" %}
+{% assign currentLevel = "A2" %}
+{% assign nextLesson = 12 %}
 
 {% for level in levels %}
-<h2>{{ level }}</h2>
-<div class="panel-group" id="{{ level }}">
-    {% for lesson in lessons %}
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a data-toggle="collapse" data-toggle="collapse" data-parent="#{{ level }}" href="#{{ level | append: "-" | append: lesson | replace: " ", "-" }}">{{ lesson }}</a>
-            </h4>
-        </div>
-        <div id="{{ level | append: "-" | append: lesson | replace: " ", "-" }}" class="panel-collapse collapse">
-            <div class="panel-body">
-                <ul class="lesson-list">
-                    {% assign name = passwortDeutsch | append: singleSpace | append: level | append: singleSpace | append: lesson] %}
-                    {% for post in site.tags[name] reversed %}
-                        <li><a title="{{ post.excerpt }}" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
+    <h2>{{ level }}</h2>
+    {% assign temp = forloop.index | modulo: 2 %}
+    <div class="panel-group" id="{{ level }}">
+        {% for i in (1..10) %}
+            {% if temp == 1 %}
+                {% assign lessonIndex = i %}
+            {% else %}
+                {% assign lessonIndex = i | plus: 10 %}
+            {% endif %}
+
+            {% if level == currentLevel and lessonIndex == nextLesson %}
+                {% break %}
+            {% endif %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        {% assign panelId = level | append: "-" | append: lektion | append: "-" | append: lessonIndex %}
+                        <a data-toggle="collapse" data-toggle="collapse" data-parent="#{{ level }}" href="#{{ panelId }}">{{ lektion }}{{ singleSpace }}{{ lessonIndex }}</a>
+                    </h4>
+                </div>
+                <div id="{{ panelId }}" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <ul class="lesson-list">
+                            {% assign tag = passwortDeutsch | append: singleSpace | append: level | append: singleSpace | append: lektion | append: singleSpace | append: lessonIndex] %}
+                            {% for post in site.tags[tag] reversed %}
+                                <li><a title="{{ post.excerpt }}" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 {% endfor %}
