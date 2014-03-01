@@ -3,7 +3,7 @@
     $("#" + GM.config.scrollUpId).scrollUp();
 
     // Execute jobs in waiting queue
-    if (typeof waitingJobsNames !== 'undefined') {
-        GM.executeWaitingJobs(waitingJobsNames);
+    if (typeof waitingJobs !== 'undefined') {
+        GM.executeWaitingJobs(waitingJobs);
     }
 </script>
