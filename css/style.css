@@ -77,7 +77,8 @@ p {
 }
 
 .highlight {
-	color: #d14;
+	color: #c7254e;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 #scroll-up {
