@@ -1,9 +1,4 @@
 <script type="text/javascript">
     // Scroll to top
-    $("#" + GM.config.scrollUpId).scrollUp();
-
-    // Execute jobs in waiting queue
-    if (typeof waitingJobs !== 'undefined') {
-        GM.executeWaitingJobs(waitingJobs);
-    }
+    $("#scroll-up").scrollUp();
 </script>
