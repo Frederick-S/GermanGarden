@@ -6,6 +6,11 @@ title: German Word of the Day
     {% for post in site.categories["german word of the day"] %}
     <div>
         <h1>{{ post.title }}</h1>
+        <p>
+            <button type="button" class="btn btn-default btn-xs">
+                <span class="glyphicon glyphicon-calendar"></span> {{ post.date | date_to_string }}
+            </button>
+        </p>
         <p>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">浏览</a></p>
     </div>
     <hr />
