@@ -10,20 +10,17 @@ title: Passwort Deutsch
 {% assign passwortDeutsch = "Passwort Deutsch" %}
 {% assign singleSpace = " " %}
 {% assign lektion = "Lektion" %}
-{% assign levels = "A1|A2" | split: "|" %}
-{% assign currentLevel = "A2" %}
-{% assign nextLesson = 21 %}
+{% assign levels = "A1|A2|B1" | split: "|" %}
+{% assign currentLevel = "B1" %}
+{% assign nextLesson = 22 %}
 
 {% for level in levels %}
     <h2>{{ level }}</h2>
-    {% assign temp = forloop.index | modulo: 2 %}
+    {% assign levelIndex = forloop.index | minus: 1 %}
     <div class="panel-group" id="{{ level }}">
         {% for i in (1..10) %}
-            {% if temp == 1 %}
-                {% assign lessonIndex = i %}
-            {% else %}
-                {% assign lessonIndex = i | plus: 10 %}
-            {% endif %}
+            {% assign temp = levelIndex | times: 10 | %}
+            {% assign lessonIndex = temp | plus: i %}
 
             {% if level == currentLevel and lessonIndex == nextLesson %}
                 {% break %}
