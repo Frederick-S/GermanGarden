@@ -14,8 +14,11 @@ module.exports = function (grunt) {
             }
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+    grunt.registerTask('css', 'cssmin:css');
+    grunt.registerTask('js', 'uglify:js');
     grunt.registerTask('default', ['cssmin:css', 'uglify:js']);
 };
