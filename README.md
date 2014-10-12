@@ -9,4 +9,4 @@ My German language notes.
 * [Lang-8](http://lang-8.com/): a place for learning and practicing foreign languages.
 
 ## Search
-If you can visit google service, visit this [Page](http://frederick-s.github.io/GermanGarden/search.html) to search site contents.
+If you can visit google service, visit this [page](http://frederick-s.github.io/GermanGarden/search.html) to search site contents.
