@@ -2,8 +2,13 @@ module.exports = function (grunt) {
     grunt.initConfig({
         cssmin: {
             css: {
-                src: 'css/style.css',
-                dest: 'css/style.min.css'
+                files: [{
+                    expand: true,
+                    cwd: 'css/',
+                    src: ['*.css'],
+                    dest: 'css/',
+                    ext: '.min.css'
+                }]
             }
         },
         uglify: {
