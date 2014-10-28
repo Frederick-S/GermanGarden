@@ -17,13 +17,18 @@ module.exports = function (grunt) {
                     'js/gm.min.js': ['js/gm.js']
                 }
             }
+        },
+        clean: {
+            css: ["css/*.min.css"],
+            js: ["js/*.min.js"]
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('css', 'cssmin:css');
-    grunt.registerTask('js', 'uglify:js');
-    grunt.registerTask('default', ['cssmin:css', 'uglify:js']);
+    grunt.registerTask('css', ['clean:css', 'cssmin:css']);
+    grunt.registerTask('js', ['clean:js', 'uglify:js']);
+    grunt.registerTask('default', ['clean', 'cssmin:css', 'uglify:js']);
 };
