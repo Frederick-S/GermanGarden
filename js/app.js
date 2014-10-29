@@ -1,4 +1,6 @@
-(function ($) {
+(function ($, window) {
+    var document = window.document;
+    
     // Scroll up plugin
     $.fn.scrollUp = function () {
         return this.each(function () {
@@ -6,9 +8,9 @@
 
             $(window).scroll(function (e) {
                 if ($(document).scrollTop() >= 300) {
-                    $this.css("display", "inline");
+                    $this.show();
                 } else {
-                    $this.css("display", "none");
+                    $this.hide();
                 }
             });
 
@@ -24,4 +26,4 @@
             });
         });
     }
-})(jQuery);
+})(jQuery, window);
