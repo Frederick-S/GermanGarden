@@ -21,12 +21,25 @@ module.exports = function (grunt) {
         clean: {
             css: ["css/*.min.css"],
             js: ["js/*.min.js"]
+        },
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['bower_components/echojs/dist/echo.min.js'],
+                        dest: 'js/'
+                    }
+                ]
+            }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('css', ['clean:css', 'cssmin:css']);
     grunt.registerTask('js', ['clean:js', 'uglify:js']);

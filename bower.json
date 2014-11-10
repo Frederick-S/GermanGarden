@@ -1,0 +1,6 @@
+{
+    "name": "GermanGarden",
+    "dependencies": {
+        "echojs": "1.6.0"
+    }
+}
