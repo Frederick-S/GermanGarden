@@ -43,5 +43,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('css', ['clean:css', 'cssmin:css']);
     grunt.registerTask('js', ['clean:js', 'uglify:js']);
-    grunt.registerTask('default', ['clean', 'cssmin:css', 'uglify:js']);
+    grunt.registerTask('default', ['clean', 'copy', 'cssmin:css', 'uglify:js']);
 };
