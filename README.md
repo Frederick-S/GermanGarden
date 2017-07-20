@@ -1,4 +1,6 @@
 ## Introduction
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/Frederick-S/GermanGarden.svg)](https://greenkeeper.io/)
 My German language notes.
 
 ## Additional Resources
